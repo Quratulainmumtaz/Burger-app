@@ -18,11 +18,12 @@
 .NavigationIteam a:hover,
 .NavigationIteam a:active,
 .NavigationIteam a.active{
-    background-color: tomato !important;
-    border-bottom: 4px solid #404ACB !;
+    background-color: #CF8F2E !important;
+    border-bottom: 4px solid silver !important;
+
 
 }
-@media (min-width:500px){
+/* @media (min-width:500px){
     .NavigationIteam{
         margin: 10px 0;
         list-style: none;
@@ -47,4 +48,4 @@
     
     }
 
-}
+} */

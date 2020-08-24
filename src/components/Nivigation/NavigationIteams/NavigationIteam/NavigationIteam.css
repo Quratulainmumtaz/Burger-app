@@ -1,8 +1,9 @@
 .NavigationIteam{
-    margin: 0;
+    margin: 10px 0;
     list-style: none;
     display: flex;
     align-items: center;
+    width: 100%;
     height: 100%;
 }
 .NavigationIteam a{
@@ -23,29 +24,30 @@
 
 
 }
-/* @media (min-width:500px){
+@media (min-width:500px){
     .NavigationIteam{
-        margin: 10px 0;
+        margin: 0;
         list-style: none;
-        display: block;
+        display: flex;
         align-items: center;
-        width: 100%;
+        width: auto;
+        height: 100%;
     }
     .NavigationIteam a{
-        color:#404ACB;
-        text-decoration: none;
-        width: 100%;
-        
-        box-sizing: border-box;
+        color: white;
+
+        height: 100%;
+        padding: 16px 10px;
         display: flex;
     
     }
     .NavigationIteam a:hover,
     .NavigationIteam a:active,
     .NavigationIteam a.active{
-        background-color: tomato !important;
-        border-bottom: 4px solid #404ACB !;
+        background-color: #CF8F2E !important;
+        border-bottom: 4px solid silver !important;
+    
     
     }
 
-} */
+}

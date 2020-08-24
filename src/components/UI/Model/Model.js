@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import './Model.css';
-import Auxiliary from '../../../hoc/Auxiliary';
+import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
 import Backdrop from '../Backdrop/Backdrop';
 
 
+class Model extends Component{
 
-const Model = (props) => (
-  <Auxiliary>
-    <Backdrop show={props.show} clicked={props.modalClosed}/>
+  shouldComponentUpdate(nextProps, nextState){
+    return nextProps.show !==this.props.show || nextProps.children !==this.props.children;
+
+  }
+  componentDidUpdate(){
+    console.log('[Model] DidUpdate');
+  }
+  render(){
+    return(
+      <Auxiliary>
+    <Backdrop show={this.props.show} clicked={this.props.modalClosed}/>
     <div className="Modal"
       style={{
-        transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-        opacity: props.show ? '1' : '0'
+        transform:this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
+        opacity: this.props.show ? '1' : '0'
       }}>
 
-      {props.children}
+      {this.props.children}
 
     </div>
   </Auxiliary>
 
-);
+    );
+  }
+}
 
 export default Model;

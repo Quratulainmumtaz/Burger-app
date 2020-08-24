@@ -1,34 +1,40 @@
-import React from 'react';
-import Auxiliary from '../../../hoc/Auxiliary';
+import React, { Component } from 'react';
+import Auxiliary from '../../../hoc/Auxiliary/Auxiliary';
 import Button from '../../UI/Button/Button';
 
-
-const OrderSummary = (props) => {
-    const ingrediantSummary = Object.keys(props.ingredient)
+class OrderSummary extends Component{
+    // componentWillUpdate(){
+    //     console.log('[OrderSummary] willUpdate');
+    // }
+   componentDidUpdate(){
+       console.log('[OrderSummary ] DidUpdate')
+   }
+    render(){
+        const ingrediantSummary = Object.keys(this.props.ingredient)
         .map(igKey => {
             return <li key={igKey}>
                 <span style={{ textTransform: "capitalize" }}>{igKey}:</span>
-                {props.ingredient[igKey]}</li>;
+                {this.props.ingredient[igKey]}</li>;
         });
-    return (
-        <Auxiliary>
+        return(
+            <Auxiliary>
             <h3>Your Order</h3>
             <p>A delicious burger with the following ingrediants: </p>
             <ul>
                 {ingrediantSummary}
             </ul>
-            <p><strong>Total Price:{props.price.toFixed(2)}</strong></p>
+            <p><strong>Total Price:{this.props.price.toFixed(2)}</strong></p>
             <p>Conitous the checkout?</p>
 
-            <Button clicked={props.purchaseCanceled}>Cancel</Button>
-            <Button clicked={props.purchaseContinued}>Continue</Button>
+            <Button clicked={this.props.purchaseCanceled}>Cancel</Button>
+            <Button clicked={this.props.purchaseContinued}>Continue</Button>
 
 
 
         </Auxiliary>
+        );
+    }
+}
 
-    );
-
-};
 
 export default OrderSummary;

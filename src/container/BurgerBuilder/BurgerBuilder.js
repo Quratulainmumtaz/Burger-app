@@ -140,7 +140,7 @@ class BurgerBuilder extends Component {
         //database conectivity 
         let burger = <Spinner />;
         if (this.state.ingredient) {
-             burger = (
+     burger = (
                 <Auxiliary>
                     <Burger ingredient={this.state.ingredient} />
                     <BuildControls ingredientAdded={this.addIngredientHandler}
